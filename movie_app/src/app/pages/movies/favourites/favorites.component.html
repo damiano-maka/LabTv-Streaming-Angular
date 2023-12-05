@@ -1,0 +1,17 @@
+<div class="container mt-3 mb-5 p-4"> 
+  <div class="row">
+    <h4 class="text-white">My favorites</h4>
+    <br>
+    <h5 [routerLink]="['/movies/catalog']">Go back</h5>
+    <div class="col-12 mt-4">
+      <div class="row rowposter">
+        <ng-container *ngFor="let m of favorites">
+          <div class="col-6 col-md-4 col-lg-2 mb-3">
+            <img src="https://image.tmdb.org/t/p/original/{{ m.movie.poster_path }}" class="rowimg largeposter" alt="{{ m.movie.original_title }}" [routerLink]="['/movies/catalog', m.movie.id]">
+            <button class="delete-button" (click)="removeMovieFromFavorites(m)">Delete</button>
+          </div>
+        </ng-container>
+      </div>
+    </div> 
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="row">
+  <div>
+    <div class="card  p-3">
+      <div class="card-body">
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+          <div class="mb-3">
+            <label for="email" class="form-label"> Email </label>
+            <input
+              type="email"
+              class="form-control custom-input"
+              id="email"
+              placeholder="name@example.com"
+              formControlName="email"
+              [class.error]="loginForm.controls.email.touched && loginForm.controls.email.errors?.['required']"
+            />
+            <span *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.['required']" class="error-message">
+              Email is required
+            </span>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label"> Password </label>
+            <div class="input-group">
+              <input
+                [type]="isPasswordVisible ? 'text' : 'password'"
+                class="form-control custom-input"
+                id="password"
+                formControlName="password"
+                [class.error]="loginForm.controls.password.touched && loginForm.controls.password.errors?.['required']"
+              />
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                id="button-addon2"
+                (click)="isPasswordVisible = !isPasswordVisible"
+              >
+                <mat-icon [fontIcon]="isPasswordVisible ? 'visibility' : 'visibility_off'"></mat-icon>
+              </button>
+            </div>
+            <span *ngIf="loginForm.controls.password.touched && loginForm.controls.password.errors?.['required']" class="error-message">
+              Password is required
+            </span>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">Login</button>
+          </div>
+          <div class="d-flex justify-content-center mt-3">
+            <p class="text-muted">
+              <strong>Not registered yet?</strong> Click here to <a [routerLink]="['/auth/register']" class="text-dark h6">REGISTER</a>.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

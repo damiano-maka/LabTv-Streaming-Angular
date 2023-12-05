@@ -1,0 +1,20 @@
+<div class="container mt-3 mb-5 p-4"> 
+   <div class="row">
+     <h4 class="text-white">Search Results for "{{ searchQuery }}"</h4>
+     <br>
+     <h5 [routerLink]="['/movies/catalog']" >Go back</h5>
+     <div class="col-12">
+       <button *ngIf="pageNumber > 1" class="btn btn-secondary mx-1 my-2 align-self-center" (click)="goback()">&leftarrow;</button>
+       
+       <div class="row">
+         <ng-container *ngFor="let m of searchResults">
+           <div class="col-6 col-md-4 col-lg-2 mb-3">
+             <img src="https://image.tmdb.org/t/p/original/{{ m.poster_path }}" class="rowimg largeposter" alt="{{ m.original_title }}" [routerLink]="['/movies/catalog', m.id]">
+           </div>
+         </ng-container>
+       </div>
+ 
+       <button class="btn btn-secondary mx-1 my-2 align-self-center" (click)="addSearchResults()">&rightarrow;</button>
+     </div> 
+   </div>
+ </div>

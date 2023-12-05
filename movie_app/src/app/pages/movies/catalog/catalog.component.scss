@@ -1,0 +1,65 @@
+.rowposter{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.rowimg
+{
+    max-height: 100px;
+    object-fit: contain;
+    width: 100%;
+    box-sizing: content-box;
+    transition: transform 450ms;
+    margin-right: 7px;
+}
+
+.rowimg:hover
+{
+    transform: scale(1.09);
+    cursor: pointer;
+}
+
+.largeposter{
+    max-height: 300px;
+}
+
+.rowposter::-webkit-scrollbar
+{
+    display: none;
+} 
+
+.rowposter button{
+    background-color: rgb(31, 31, 31);
+    color: white
+}
+.rowposter button:hover{
+    background-color: rgb(71, 71, 71);
+}
+
+footer img{
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+    filter: drop-shadow(0 0 40px #fff);
+} 
+footer img:hover{
+    filter: drop-shadow(0 0 40px rgb(255, 65, 65));
+}
+
+.social-icons {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      i:hover{
+        filter: drop-shadow(0 0 10px #fff);
+      }
+    }
+}
+   

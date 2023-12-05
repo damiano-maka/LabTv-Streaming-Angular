@@ -1,0 +1,23 @@
+  .custom-input {
+    border-color: #414141; 
+  }
+
+  .custom-input:focus {
+    border-color: #2980b9; 
+  }
+
+  .error-message {
+    color: #e74c3c; 
+    margin-top: 5px;
+    font-size: 14px;
+  }
+
+  .custom-input.error {
+    border-color: #e74c3c; 
+  }
+
+
+  .btn-success:hover {
+    background-color: #218838; 
+    border-color: #218838; 
+  }

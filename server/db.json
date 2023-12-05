@@ -1,0 +1,28 @@
+{
+  "favourite": [
+    {
+      "id": "1075794-usr-2",
+      "userId": 2,
+      "movie": {
+        "backdrop_path": "/9PqD3wSIjntyJDBzMNuxuKHwpUD.jpg",
+        "poster_path": "/pD6sL4vntUOXHmuvJPPZAgvyfd9.jpg",
+        "title": "Leo",
+        "id": 1075794
+      }
+    }
+  ],
+  "users": [
+    {
+      "email": "test@test.it",
+      "password": "$2a$10$u.oYd6EY2ZlMwaoQbSky8OgQTIPR6mvAkFjXRm6dshonZJjr8ElKK",
+      "name": "Test Movie",
+      "id": 1
+    },
+    {
+      "email": "test@test.com",
+      "password": "$2a$10$183WACs13QzwIkQgQHpyIu0Y15p09BUVdv2Mn35P3OeclM.BCOuxC",
+      "name": "Matteo Test",
+      "id": 2
+    }
+  ]
+}

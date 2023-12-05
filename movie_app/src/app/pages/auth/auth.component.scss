@@ -1,0 +1,16 @@
+.full-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://miro.medium.com/v2/resize:fit:4800/format:webp/1*5lyavS59mazOFnb55Z6znQ.png");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.box{
+    border: 1px solid rgba(0, 0, 0, 0.629);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.449);
+}

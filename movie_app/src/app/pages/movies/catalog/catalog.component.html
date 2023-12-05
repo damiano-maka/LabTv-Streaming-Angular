@@ -1,0 +1,106 @@
+<div class="fluid">
+  <app-movie-slider [slider]="trendingList" (down)="scrollToCatalog()"></app-movie-slider>
+</div>  
+
+<div class="container-fluid" id="catalog" >
+
+    <div class="contain mt-3 mb-5 p-4">
+        
+       <div class="row">
+          <h5 class="text-white">Trending Movies</h5>
+           <div class="rowposter mt-3 p-2">
+             <button *ngIf="trendingPage > 1" class="btn  mx-1" (click)="gobackTrending()">&leftarrow;</button>
+             <ng-container *ngFor="let m of trendingList">
+              <img src="https://image.tmdb.org/t/p/original/{{ m.poster_path }}" class="rowimg largeposter" alt="{{m.original_title}}"
+                [routerLink]="['/movies/catalog',m.id]">
+              </ng-container>
+            <button class="btn mx-1" (click)="addMoreTrending()">&rightarrow;</button>
+          </div> 
+        </div>
+    
+    
+        <div class="row mt-3">
+          <h5 class="text-white">Adventure Movies</h5>
+           <div class="rowposter mt-3 p-2">
+            <button *ngIf="actionPage > 1" class="btn  mx-1" (click)="gobackAction()">&leftarrow;</button>
+             <ng-container *ngFor="let m of actionList">
+              <img src="https://image.tmdb.org/t/p/original/{{ m.poster_path }}" class="rowimg largeposter" alt="{{m.original_title}}"
+                [routerLink]="['/movies/catalog',m.id]">
+              </ng-container>
+            <button class="btn  mx-1" (click)="addMoreAction()">&rightarrow;</button>
+          </div> 
+        </div>
+
+
+        <div class="row mt-3">
+          <h5 class="text-white">Animation Movies</h5>
+           <div class="rowposter mt-3 p-2">
+            <button *ngIf="animationPage > 1" class="btn  mx-1" (click)="gobackAnimation()">&leftarrow;</button>
+             <ng-container *ngFor="let m of animationList">
+              <img src="https://image.tmdb.org/t/p/original/{{ m.poster_path }}" class="rowimg largeposter" alt="{{m.original_title}}"
+                [routerLink]="['/movies/catalog',m.id]">
+              </ng-container>
+            <button class="btn  mx-1" (click)="addMoreAnimation()">&rightarrow;</button>
+          </div> 
+        </div>
+
+        <div class="row mt-3">
+          <h5 class="text-white">Thriller Movies</h5>
+           <div class="rowposter mt-3 p-2">
+            <button *ngIf="thrillerPage > 1" class="btn  mx-1" (click)="gobackThriller()">&leftarrow;</button>
+             <ng-container *ngFor="let m of thrillerList">
+              <img src="https://image.tmdb.org/t/p/original/{{ m.poster_path }}" class="rowimg largeposter" alt="{{m.original_title}}"
+                [routerLink]="['/movies/catalog',m.id]">
+              </ng-container>
+            <button class="btn  mx-1" (click)="addMoreThriller()">&rightarrow;</button>
+          </div> 
+        </div>
+
+        <div class="row mt-3">
+          <h5 class="text-white">Documentary Movies</h5>
+           <div class="rowposter mt-3 p-2">
+            <button *ngIf="documentaryPage > 1" class="btn  mx-1" (click)="gobackDocumentary()">&leftarrow;</button>
+             <ng-container *ngFor="let m of documentaryList">
+              <img src="https://image.tmdb.org/t/p/original/{{ m.poster_path }}" class="rowimg largeposter" alt="{{m.original_title}}"
+                [routerLink]="['/movies/catalog',m.id]">
+              </ng-container>
+            <button class="btn  mx-1" (click)="addMoreDocumentary()">&rightarrow;</button>
+          </div> 
+        </div>
+
+        <div class="row mt-3">
+          <h5 class="text-white">Comedy Movies</h5>
+           <div class="rowposter mt-3 p-2">
+            <button *ngIf="comedyPage > 1" class="btn mx-1" (click)="gobackComedy()">&leftarrow;</button>
+             <ng-container *ngFor="let m of comedyList">
+              <img src="https://image.tmdb.org/t/p/original/{{ m.poster_path }}" class="rowimg largeposter" alt="{{m.original_title}}"
+                [routerLink]="['/movies/catalog',m.id]">
+              </ng-container>
+            <button class="btn  mx-1" (click)="addMoreComedy()">&rightarrow;</button>
+          </div> 
+        </div>
+    </div> 
+    
+</div> 
+<footer class="footer p-2 text-light bg-dark  border-top border-body" data-bs-theme="dark">
+  <div class="container">
+
+    <div class="row d-flex align-items-center justify-content-center">
+
+      <div class="col-12 col-sm-6 text-center mb-4 mb-sm-0">
+        <span class="logo">
+          <img src="../../../assets/logo-tipo.png" draggable="false"  class="img-fluid" alt="LAB-TV Logo">
+        </span>
+      </div>
+
+      <div class="social-icons mt-3 col-12 col-sm-6 text-center">
+        <a href="https://www.facebook.com/labfortraining" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+        <a href=" https://wa.me/393272618739" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://github.com/damiano-maka" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/damiano-maka/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+    </div>
+
+  </div>
+</footer>

@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-md  bg-dark border-bottom border-body" data-bs-theme="dark">
+
+    <div class="container-fluid">
+        <img src="../../../assets/logo.png" draggable="false"  id="logo" alt="">
+        <a class="navbar-brand" routerLink="catalog">LAB TV</a>   
+      
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       
+        <ul class="navbar-nav d-flex align-items-center  justify-content-center me-auto">
+          <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link"  href="/movies/catalog">Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="catalog" (click)="scrollToCatalog()">Catalog</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="favourites">Wish List</a>
+          </li>
+        </ul>
+        
+        <form  class="d-flex" (ngSubmit)="searchMovies()">
+              <input class="form-control me-2" type="text" [(ngModel)]="s" name="searchQuery"  placeholder="Search" aria-label="Search" required>
+              <button   class="btn btn-outline-secondary" type="submit">Search</button>
+              <i class="btn btn-outline-secondary ms-2 d-flex justify-content-center align-content-center" [matMenuTriggerFor]="menu" >
+              <i class="material-icons"  style="font-size: 20px;">person</i>
+            <mat-menu #menu="matMenu" class="d-flex justify-content-center p-2">
+              <div class="container">
+                <b>Name : <u>{{user.name}}</u></b>
+                 <br />
+                <b>Email : <u>{{user.email}}</u></b>
+                <b mat-menu-item (click)="onLogout()" >Logout</b>
+              </div>
+            </mat-menu>
+            </i>
+        </form>
+      </div>
+  </div>
+</nav>  
+<div class="fluid mb-5">
+      <router-outlet></router-outlet> 
+</div> 
+

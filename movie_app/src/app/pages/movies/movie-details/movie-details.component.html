@@ -1,0 +1,47 @@
+<div class="fluid bg-dark">
+  <div style="background-image: url('https://image.tmdb.org/t/p/w1280/{{ movieDetails.backdrop_path }}'); background-size: cover; background-position: center; width: 100%; height: 100%;">
+    <div class="container p-4">
+
+      <div class="container text-center p-4  bg-dm">
+
+        <div class="row">
+          <h1 class="display-4 mt-3">{{ movieDetails.title }}</h1>
+          <p>Release Date: {{ movieDetails.release_date | date }} | &#9734; {{ movieDetails.vote_average }}</p>
+        </div>
+        <div class="container">
+          <button type="button" class="btn btn-primary m-2"  [routerLink]="['/movies/player/', movieDetails.imdb_id]">Watch now</button>
+        <!--  OPSIONE 2 <button type="button" class="btn btn-primary m-2"  [routerLink]="['/movies/player/', movieDetails.id]">Watch now</button> -->
+          <button type="button" class="btn btn-success m-2" (click)="addFavorite()">Add to Favorites</button>
+        </div>
+        <div class="row mt-4">
+          <div class="col-lg-8 offset-lg-2">
+            <h2 class="h4">Overview</h2>
+            <p>{{ movieDetails.overview }}</p>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-lg-8 offset-lg-2">
+            <ul class="list-unstyled">
+              <li>Popularity: {{ movieDetails.popularity }}</li>
+              <li>Runtime: {{ movieDetails.runtime | number }} min</li>
+              <li>Tagline: "{{ movieDetails.tagline }}"</li>
+              <li>Vote Count: {{ movieDetails.vote_count }}</li>
+            </ul>
+          </div>
+        </div>
+       <div class="col-12">
+          <h3 class="display-6 mt-3">Official Trailer</h3>
+          <div *ngIf="mov && mov.length > 0">
+            <div *ngFor="let trailer of mov" class="mt-5">
+              <app-youtube-player [videoKey]="trailer.key"></app-youtube-player>
+            </div>
+          </div>
+          <div *ngIf="!mov || mov.length === 0">
+            No available trailers.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
